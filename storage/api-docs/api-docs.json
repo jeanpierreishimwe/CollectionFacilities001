@@ -1,0 +1,267 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Authentication",
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Authertications"
+                ],
+                "summary": " login authentication request",
+                "description": "Description",
+                "operationId": "TitleesI",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Response Message",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/logout": {
+            "post": {
+                "tags": [
+                    "Authertications"
+                ],
+                "summary": " logout Destroy an authenticated session",
+                "description": "Description",
+                "operationId": "TitleesU",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Response Message",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/email/verification-notification": {
+            "get": {
+                "tags": [
+                    "Authertications"
+                ],
+                "summary": "Confirm the user's password",
+                "description": "Description",
+                "operationId": "TitleesY",
+                "responses": {
+                    "200": {
+                        "description": "Successfully retreived the data"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Authertications"
+                ],
+                "summary": "Send a new email verification notification",
+                "description": "Description",
+                "operationId": "TitleesT",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Response Message",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/verify-email": {
+            "get": {
+                "tags": [
+                    "Authertications"
+                ],
+                "summary": " email verification prompt",
+                "description": "Description",
+                "operationId": "TittleesR",
+                "responses": {
+                    "200": {
+                        "description": "Successfully retreived the data"
+                    }
+                }
+            }
+        },
+        "/api/reset-password": {
+            "post": {
+                "tags": [
+                    "Authertications"
+                ],
+                "summary": " new password request",
+                "description": "Description",
+                "operationId": "TitlesE",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Response Message",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/password": {
+            "put": {
+                "tags": [
+                    "Authertications"
+                ],
+                "summary": "Update the user's password",
+                "description": "Description",
+                "operationId": "Titleasw",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Response Message",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/forgot-password": {
+            "post": {
+                "tags": [
+                    "Authertications"
+                ],
+                "summary": "password reset link request",
+                "description": "Description",
+                "operationId": "Titleeq",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Response Message",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "Authertications"
+                ],
+                "summary": " registration request",
+                "description": "Description",
+                "operationId": "Title",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Response Message",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/verify-email/{id}/{hash}": {
+            "get": {
+                "tags": [
+                    "Authertications"
+                ],
+                "summary": "Mark the authenticated user's email address as verified",
+                "description": "Description",
+                "operationId": "TestId",
+                "responses": {
+                    "200": {
+                        "description": "Successfully retreived the data"
+                    }
+                }
+            }
+        },
+        "/api/diplayUsers": {
+            "get": {
+                "tags": [
+                    "Authertications"
+                ],
+                "summary": "display registered users",
+                "description": "Description",
+                "operationId": "TittlesO",
+                "responses": {
+                    "200": {
+                        "description": "Successfully retreived the data"
+                    }
+                }
+            }
+        }
+    }
+}
