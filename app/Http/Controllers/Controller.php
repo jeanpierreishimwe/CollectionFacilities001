@@ -8,7 +8,7 @@ use Illuminate\Routing\Controller as BaseController;
 
 /**
 * @OA\Info(
- * title="Authentication",
+ * title="Collectional Facilities BaCK-End Rest Api EndPoints For",
  *      version="1.0.0",
  *     @OA\License(
  *         name="Apache 2.0",
