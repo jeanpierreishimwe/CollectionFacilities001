@@ -28,7 +28,7 @@ class PasswordController extends Controller
     *      ),
     *      @OA\Response(
     *          response=200,
-    *          description="Response Message",
+    *          description="Responses Message",
     *          @OA\JsonContent()
     *       ),
     *     )
