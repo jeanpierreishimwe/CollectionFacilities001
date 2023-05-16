@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         $this->app->register(\L5Swagger\L5SwaggerServiceProvider::class);
-        Schema::defaultStringLength(191);
+        Schema::defaultStringLength(250);
     }
 
     /**
