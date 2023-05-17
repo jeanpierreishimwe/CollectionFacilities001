@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
@@ -10,14 +11,26 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
+
+
+
+
 class AuthenticatedSessionController extends Controller
 {
+    use AuthenticatesUsers;
     /**
-     * Display the login view.
+     * Create a new controller instance.
      */
+    public function __construct()
+    {
+        $this->middleware('web');
+        /**
+         * Display the login view.
+         */
+    }
     public function create(): View
     {
-        return view('auth.login');
+        return view('auth.login')->with('errors', session('errors') ?? collect());
     }
 
     /**
@@ -46,7 +59,7 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
-        // $request->session()->regenerate();
+        $request->session()->regenerate();
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }

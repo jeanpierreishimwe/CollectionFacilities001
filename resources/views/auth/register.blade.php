@@ -1,3 +1,6 @@
+@php
+    $errors = session('errors') ?? $errors;
+@endphp
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
