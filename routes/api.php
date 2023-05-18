@@ -88,6 +88,6 @@ Route::put('registerfacilities/{id}', [RegiterCollectionalFacilitController::cla
 Route::delete('registerfacilities/{id}', [RegiterCollectionalFacilitController::class, 'CollectionalFacilityDestroy']);
 
 
-Route::post('collectinalfacilities/{collectinalfacilityId}/inimates', [RegisterInimateController::class, 'store']);
-Route::put('collectinalfacilities/{collectinalfacilityId}/inimates/{inimateId}', [RegisterInimateController::class, 'update']);
-Route::delete('collectinalfacilities/{collectinalfacilityId}/inimates/{inimateId}', [RegisterInimateController::class, 'destroy']);
+Route::post('collectinalfacilities/{collectinalfacilityId}/inimates', [RegisterInimateController::class, 'StoreInimate']);
+Route::put('collectinalfacilities/{collectinalfacilityId}/inimates/{inimateId}', [RegisterInimateController::class, 'UpdateInimate']);
+Route::delete('collectinalfacilities/{collectinalfacilityId}/inimates/{inimateId}', [RegisterInimateController::class, 'DestroyInimate']);

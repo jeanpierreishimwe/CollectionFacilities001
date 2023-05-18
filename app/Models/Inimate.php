@@ -8,15 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Inimate extends Model
 {
     use HasFactory;
-   protected $fillable =[
+  protected $fillable=[
     'name',
     'collectinalfacility_id'
+  ];
 
     public function collectinalfacility()
-    protected $fillable = ['name', 'collectinalfacility_id'];
     {
         return $this->belongsTo(Collectinalfacility::class);
     }
-   ]
 
 }

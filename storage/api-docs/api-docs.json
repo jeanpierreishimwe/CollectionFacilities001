@@ -9,6 +9,34 @@
         "version": "1.0.0"
     },
     "paths": {
+        "/api/collectinalfacilities/{collectinalfacilityId}/inimates": {
+            "post": {
+                "tags": [
+                    "InimateRegister"
+                ],
+                "summary": " registration request",
+                "description": "Description",
+                "operationId": "inimate01",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Response Message",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/login": {
             "post": {
                 "tags": [
@@ -167,7 +195,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Response Message",
+                        "description": "Responses Message",
                         "content": {
                             "application/json": {
                                 "schema": {}

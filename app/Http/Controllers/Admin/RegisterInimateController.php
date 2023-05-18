@@ -8,6 +8,25 @@ use Illuminate\Http\Request;
 
 class RegisterInimateController extends Controller
 {
+
+      /**
+    * @OA\Post(
+    *      path="/api/collectinalfacilities/{collectinalfacilityId}/inimates",
+    *      operationId="inimate01",
+    *      tags={"InimateRegister"},
+    *      summary=" registration request",
+    *      description="Description",
+    *      @OA\RequestBody(
+    *          required=true,
+    *          @OA\JsonContent()
+    *      ),
+    *      @OA\Response(
+    *          response=200,
+    *          description="Response Message",
+    *          @OA\JsonContent()
+    *       ),
+    *     )
+    */
     public function StoreInimate(Request $request, $collectinalfacilityId)
     {
         $name = $request->input('name');
@@ -36,8 +55,7 @@ class RegisterInimateController extends Controller
     {
      
         $inimate = Inimate::where('collectinalfacility_id', $collectinalfacilityId)
-            ->where('id', $inimateId)
-            ->first();
+            ->where('id', $inimateId)->first();
         if (!$inimate) {  
             return response()->json(['message' => 'Inmate not found.'], 404);
         }
