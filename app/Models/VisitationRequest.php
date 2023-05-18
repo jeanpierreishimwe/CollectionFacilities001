@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class VisitationRequest extends Model
 {
     use HasFactory;
-   protected $fillable= {
-    ''
-   }
+   protected $fillable=[
+    
+   ];
 
 }
