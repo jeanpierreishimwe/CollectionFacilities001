@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\RegiterCollectionalFacilitController;
+use App\Http\Controllers\Admin\RegisterInimateController;
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
@@ -25,6 +27,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//AUTHERNTICATION
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
@@ -76,3 +79,15 @@ Route::get('/diplayUsers', [ListUsersController::class, 'listusers']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//ADMIN
+Route::get('registerfacilities', [RegiterCollectionalFacilitController::class,'CollectionalFacilitiesIndex']);
+Route::post('registerfacilities', [RegiterCollectionalFacilitController::class,'CollectionalFacilityStore']);
+Route::get('registerfacilities/{id}', [RegiterCollectionalFacilitController::class, 'CollextionalFacilityShow']);
+Route::put('registerfacilities/{id}', [RegiterCollectionalFacilitController::class, 'CollectionalFacilityUpdate']);
+Route::delete('registerfacilities/{id}', [RegiterCollectionalFacilitController::class, 'CollectionalFacilityDestroy']);
+
+
+Route::post('collectinalfacilities/{collectinalfacilityId}/inimates', [RegisterInimateController::class, 'store']);
+Route::put('collectinalfacilities/{collectinalfacilityId}/inimates/{inimateId}', [RegisterInimateController::class, 'update']);
+Route::delete('collectinalfacilities/{collectinalfacilityId}/inimates/{inimateId}', [RegisterInimateController::class, 'destroy']);
