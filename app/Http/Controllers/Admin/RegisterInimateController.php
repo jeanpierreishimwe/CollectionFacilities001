@@ -1,40 +1,47 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
+use App\Models\Inimate;
+use App\Models\Collectinalfacility;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class RegisterInimateController extends Controller
 {
-    public function store(Request $request, $collectinalfacilityId)
+    public function StoreInimate(Request $request, $collectinalfacilityId)
     {
-        $data = $request->only('name');
-        $data['collectinalfacility_id'] = $collectinalfacilityId;
-
-        $inimate = Inimate::create($data);
-
+        $name = $request->input('name');
+        $inimate = new Inimate();
+        $inimate->name = $name;
+        $inimate->collectinalfacility_id = $collectinalfacilityId;
+        $inimate->save();
         return response()->json($inimate, 201);
     }
-    public function update(Request $request, $collectinalfacilityId, $inimateId)
+    public function UpdateInimate(Request $request, $collectinalfacilityId, $inimateId)
     {
-        $data = $request->only('name');
-
+        $name = $request->input('name');
         $inimate = Inimate::where('collectinalfacility_id', $collectinalfacilityId)
-            ->findOrFail($inimateId);
+        ->where('id', $inimateId)->first();
+    if (!$inimate) {
+        // Inmate not found, return an error response
+        return response()->json(['message' => 'Inmate not found.'], 404);
+    };
 
-        $inimate->update($data);
+    $inimate->name = $name;
+    $inimate->save();
 
-        return response()->json($inimate);
     }
 
-    public function destroy($collectinalfacilityId, $inimateId)
+    public function DestroyInimate($collectinalfacilityId, $inimateId)
     {
+     
         $inimate = Inimate::where('collectinalfacility_id', $collectinalfacilityId)
-            ->findOrFail($inimateId);
-
+            ->where('id', $inimateId)
+            ->first();
+        if (!$inimate) {  
+            return response()->json(['message' => 'Inmate not found.'], 404);
+        }
         $inimate->delete();
-
         return response()->json(null, 204);
     }
     
